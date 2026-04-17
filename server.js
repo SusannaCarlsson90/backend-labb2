@@ -11,7 +11,7 @@ const app = express();
 app.use(cors()); // Tillåt cross-origin
 app.use(express.json()); // Parsa JSON-body
 // 5. Starta servern
-app.listen(5000, () => console.log("Server på port 5000"));
+app.listen(5001, () => console.log("Server på port 5001"));
 
 //Routes:
 //GET (hämta data )
