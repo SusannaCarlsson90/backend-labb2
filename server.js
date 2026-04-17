@@ -18,7 +18,7 @@ app.listen(5000, () => console.log("Server på port 5000"));
 
 //experiences alla erfarenheter
 app.get("/workexperience", (req, res) => {
-  const experiences = db.prepare("SELECT FROM * workexperience").all();
+  const experiences = db.prepare("SELECT * FROM workexperience").all();
   res.json(experiences);
 });
 
@@ -65,11 +65,9 @@ app.put("/workexperience/:id", (req, res) => {
 
   // 1. Validering
   if (!companyname || !jobtitle || !location) {
-    return res
-      .status(400)
-      .json({
-        message: "Företagsnamn, jobbtitel och plats krävs för uppdatering.",
-      });
+    return res.status(400).json({
+      message: "Företagsnamn, jobbtitel och plats krävs för uppdatering.",
+    });
   }
 
   // 2. Förbered SQL-frågan
