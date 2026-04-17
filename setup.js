@@ -1,3 +1,5 @@
+//Skapa databasen med ett JS installations-script
+
 const Database = require("better-sqlite3");
 
 const db = new Database("workexperience.db");
